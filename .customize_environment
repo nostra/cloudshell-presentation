@@ -18,3 +18,4 @@ chsh -s `which zsh` $USER
 
 # Install VSCode server
 # curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run | sed 's|~/.cache|/tmp/cache|g'
+curl -fsSL https://code-server.dev/install.sh | sed 's|~/.cache|/tmp/cache|g' | sh -s --
