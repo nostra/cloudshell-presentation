@@ -2,20 +2,25 @@
 
 # This script is run during startup as root, asynchronously
 
-: ${USER="nossum"}
+: ${USER="nossum"}|
 
 # Remove default help script file
 rm -f /etc/profile.d/init_help.sh
 
+# Customize welcome file
 wget -P /etc/profile.d/ https://raw.githubusercontent.com/nostra/dotfiles/master/init_welcome.sh
 chmod +x /etc/profile.d/init_welcome.sh
 
+# Update customize_environment - will be active after next restart
 curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/.customize_environment > /home/$USER/.customize_environment
 
+# Install zsh
 sudo apt-get update
 sudo apt install -y zsh
 chsh -s `which zsh` $USER
 
 # Install VSCode server
+# From: https://medium.com/google-cloud/how-to-run-visual-studio-code-in-google-cloud-shell-354d125d5748
 # curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run | sed 's|~/.cache|/tmp/cache|g'
 curl -fsSL https://code-server.dev/install.sh | sed 's|~/.cache|/tmp/cache|g' | sh -s --
+# Start server when desired with:  code-server --no-auth --port 8080
