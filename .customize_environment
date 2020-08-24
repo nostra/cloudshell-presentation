@@ -1,8 +1,10 @@
 #!/bin/sh
 
 # This script is run during startup as root, asynchronously
-
 : ${USER="nossum"}|
+
+# Update customize_environment
+curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/.customize_environment > /home/$USER/.customize_environment
 
 # Remove default help script file
 rm -f /etc/profile.d/init_help.sh
@@ -10,9 +12,6 @@ rm -f /etc/profile.d/init_help.sh
 # Customize welcome file
 wget -P /etc/profile.d/ https://raw.githubusercontent.com/nostra/dotfiles/master/init_welcome.sh
 chmod +x /etc/profile.d/init_welcome.sh
-
-# Update customize_environment - will be active after next restart
-curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/.customize_environment > /home/$USER/.customize_environment
 
 # Install zsh
 sudo apt-get update
