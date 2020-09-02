@@ -2,8 +2,12 @@
 
 # This script is run during startup as root, asynchronously
 
-# Update customize_environment (works as * expands to just one user)
-curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/_customize_environment > /home/*/.customize_environment
+# Update customize_environment
+for user in `ls /home`
+do
+   echo "Updating customized environemnt for: $user"
+   curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/_customize_environment > /home/$user/.customize_environment
+done
 
 # Remove default help script file
 rm -f /etc/profile.d/init_help.sh
