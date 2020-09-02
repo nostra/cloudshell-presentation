@@ -9,4 +9,4 @@ cd presentation
 make
 ```
 
-Then view [presentation/cloudshell-25-08-2020.html](./presentation/cloudshell-25-08-2020.html) in a browser.
+Then view `presentation/cloudshell-25-08-2020.html` in a browser.
