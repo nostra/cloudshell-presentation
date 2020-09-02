@@ -6,14 +6,14 @@
 for user in `ls /home`
 do
    echo "Updating customized environemnt for: $user"
-   curl -fsSL https://raw.githubusercontent.com/nostra/dotfiles/master/_customize_environment > /home/$user/.customize_environment
+   curl -fsSL https://raw.githubusercontent.com/nostra/cloudshell-presentation/master/_customize_environment > /home/$user/.customize_environment
 done
 
 # Remove default help script file
 rm -f /etc/profile.d/init_help.sh
 
 # Customize welcome file
-wget -P /etc/profile.d/ https://raw.githubusercontent.com/nostra/dotfiles/master/init_welcome.sh
+wget -P /etc/profile.d/ https://raw.githubusercontent.com/nostra/cloudshell-presentation/master/init_welcome.sh
 chmod +x /etc/profile.d/init_welcome.sh
 
 # Install zsh

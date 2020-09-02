@@ -122,7 +122,7 @@ Start server with:
 wget -P /etc/profile.d/ https://URL/path/to/your/init_welcome.sh
 chmod +x /etc/profile.d/init_welcome.sh
 ```
-- Examples in https://github.com/nostra/dotfiles
+- Examples in https://github.com/nostra/cloudshell-presentation
 
 ???
 - The cloudshell docker image used to be extendable, but now I cannot find any references to it

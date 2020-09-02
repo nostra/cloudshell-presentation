@@ -1,6 +1,6 @@
-# dotfiles
+# Cloudshell presentation
 
-Dotfiles for cloudshall, and companion presentation.
+Dotfiles for cloudshell, and companion presentation.
 
 Render presentation with:
 
